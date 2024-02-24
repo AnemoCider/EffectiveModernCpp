@@ -8,7 +8,7 @@ Consider:
     void f(ParamType param);
     f(expr);
 
-### ParamType is a reference or pointer
+### ParamType is a reference
 
 Rule: Ignore expr's reference-ness, but keep const (after the ignoring), then match against ParamType to get T.
 
@@ -21,11 +21,6 @@ Example:
     f(x); // int, int&
     f(cx); // int, const int&
     f(rx); // int, const int&
-
-    void f(const T* x);
-    const int* px = &x;
-    f(x); // int, const int*
-    f(px); // int, const int*
 
 ### Universal Reference
 
