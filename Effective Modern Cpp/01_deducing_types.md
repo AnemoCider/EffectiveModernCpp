@@ -10,7 +10,7 @@ Consider:
 
 ### ParamType is a reference or pointer
 
-Rule: Ignore expr's reference-ness or pointer-ness, but keep const (aftere the ignoring), then match against ParamType to get T.
+Rule: Ignore expr's reference-ness, but keep const (after the ignoring), then match against ParamType to get T.
 
 Example:
 
