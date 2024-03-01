@@ -22,6 +22,11 @@ Example:
     f(cx); // int, const int&
     f(rx); // int, const int&
 
+Note: the `const`-ness is kept such that this is valid:
+
+    const MyClass c;
+    auto &r = c; // valid, r is const myClass&
+
 ### Universal Reference
 
 Only in this case that T can be deduced to a reference.
