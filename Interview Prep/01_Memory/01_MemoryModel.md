@@ -8,13 +8,14 @@ Code, Static Data, Heap, Stack.
 
 It contains:
 
-- Global variables declared outside of functions (need NOT be static)
+- Global variables declared outside of functions (need NOT to be static)
 - Static variables
 - Static constants, e.g., string literals
 
 It is divided into:
 
 - Initialized data segment (`.data`)
+- Read-only data (`.rodata`)
 - Uninitialized (`.bss`), all memories are initialized to 0
 
 About the usage of `static`: [Static and Extern](../02_Keywords/01_Static_Extern_Inline.md)
