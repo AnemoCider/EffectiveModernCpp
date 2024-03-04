@@ -90,14 +90,16 @@ Inline can apply to both functions and variables.
 
 Say we have a function declared globally in the header file.
 
-No directive: by default, `extern`. There should be exactly one definition in any source file. Therefore, you should never define it in the header file.
+No directive: by default, `extern`. There should be exactly one definition in any source file. Use this to define global function in the header file.
 
 `static`: each source file should define it separately. You can define it in the header file, but each source file will create and use an extra copy.
 
-`inline`: (not sure) equivalent to `extern inline`. There can be one or more definitions across the program. They should be identical. If you want to define the function in the header file, this is what you should use.
+`inline`: There can be one or more definitions across the program. They should be identical.
 
 `static inline`: same as `static`.
 
 ### Variable
+
+`extern`: the most appropriate way to declare a variable in the header file.
 
 `static inline` allows definition of static variables within a class.
