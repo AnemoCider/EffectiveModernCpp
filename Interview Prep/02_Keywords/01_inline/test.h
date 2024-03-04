@@ -1,4 +1,4 @@
 #pragma once
 #include <iostream>
 
-static int a = 1;
+extern int a = 1;
