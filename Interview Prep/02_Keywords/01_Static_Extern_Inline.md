@@ -145,7 +145,6 @@ No directive: by default, `extern`. There should be exactly one definition in an
 
 ### Variable
 
-<<<<<<< HEAD
 Nothing: external linkage
 
 `const` or `static`: internal linkage
@@ -190,8 +189,3 @@ Similar effect, but:
 ### Other problems of inline
 
 - when code size becomes larger, cache coherency is reduced, and even page faults may be triggered frequently.
-=======
-`extern`: the most appropriate way to declare a variable in the header file.
-
-`static inline` allows definition of static variables within a class.
->>>>>>> ec7965e71e3409b57ec786a0f26ab615b0342865
