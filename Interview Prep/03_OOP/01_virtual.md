@@ -28,3 +28,13 @@ refer to [this blog](https://blog.twofei.com/496/)
 ## virtual inheritance
 
 Use a pointer to access the members of the virtual base
+
+## More Rules
+
+### What cannot be virtual
+
+- constructor, becasue vtable may not have been created
+- static member function, because it is not bound to a specific object (no `this`)
+- template member functions
+  - compiler generate a fixed-size vtable
+  - number of instance cannot be known before linking the whole program
