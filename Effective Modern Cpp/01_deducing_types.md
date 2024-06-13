@@ -31,6 +31,28 @@ Note: the `const`-ness is kept such that this is valid:
 
 Only in this case that T can be deduced to a reference.
 
+- If expr is an lvalue, both T and ParamType are deduced to be lvalue references.
+- If expr is an rvalue, then the normal case.
+
+Examples:
+
+```Cpp
+
+template<typename T>
+void f(T&& param);
+
+int x = 1;
+const int cx = x;
+const int& rx = x;
+
+f(1); // T is int, ParamType is int&&
+f(x); // T is int&, ParamType is int&&& ==> int&
+f(cx); // T is const int&, ParamType is const int&&& ==> const int&
+f(rx); // T is const int&, ParamType is const int&&& ==> const int&
+```
+
+Idea is simple: We don't want to convert an lvalue to rvalue (this is `move`'s job).
+
 ### Pass-By-Value
 
 Besides ignoring the input's reference-ness, ignore the const in addition. 
